@@ -1,0 +1,2 @@
+Toplam Tur Sayýsý:6
+Toplam Doðru Eþleþtirme Sayýsý:3
