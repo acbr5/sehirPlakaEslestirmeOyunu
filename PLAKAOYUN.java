@@ -26,7 +26,7 @@ public class PLAKAOYUN {
 	Random rnd;
 	int[] sonucDizi;
 	
-	PLAKAOYUN() throws IOException {
+	PLAKAOYUN() {
 		try {
 			dosya = new File("sehirplaka.txt"); 	
 			fr=new FileReader(dosya);
@@ -64,13 +64,13 @@ public class PLAKAOYUN {
 		}
 	}
 	
-	//Random Sayılar Atayarak Random Şekilde Ekrana Yazdırma
+	//Random SayÃ½lar Atayarak Random Ãekilde Ekrana YazdÃ½rma
 	public void randomAtamalar() {
 		Scanner gir=new Scanner(System.in);
 		int i, j, sayac, sayi, dogru=0, tur=0, indis;
 		do {	
 			
-			//4 Tane Random Sayi Atama Ve Bunların Birbirinden Farklı Olmasını Kontrol Etme
+			//4 Tane Random Sayi Atama Ve BunlarÃ½n Birbirinden FarklÃ½ OlmasÃ½nÃ½ Kontrol Etme
 			do {
 				sayac=0;
 				for(i=0; i<4; i++) {
@@ -86,7 +86,7 @@ public class PLAKAOYUN {
 			}while(sayac!=0);
 			
 			
-			//Bir Diziye Atanan Random Sayıları 
+			//Bir Diziye Atanan Random SayÃ½larÃ½ 
 			for(i=0; i<2; i++) {
 				diziIsim[i]=isimliste.get(dizi[i]);	
 			}
@@ -104,35 +104,35 @@ public class PLAKAOYUN {
 				diziIsim[1]=isimliste.get(dizi[1]);
 				diziPlaka[1]=noliste.get(dizi[1]);
 			}
-			System.out.println("\nPlaka Şehir Eşleştirme Oyununa Hoşgeldiniz!"+"\t\tDogru : "+dogru+"\tTur : "+tur);
+			System.out.println("\nPlaka Ãehir EÃ¾leÃ¾tirme Oyununa HoÃ¾geldiniz!"+"\t\tDogru : "+dogru+"\tTur : "+tur);
 			System.out.println("----------------------------------------------------------------------------------");
-			System.out.println("#Oyundan çıkmak için (0) giriniz#\n");
+			System.out.println("#Oyundan Ã§Ã½kmak iÃ§in (0) giriniz#\n");
 			System.out.println("1) "+diziIsim[0]+" = "+diziPlaka[0]+"\t\t2) "+diziIsim[1]+" = "+diziPlaka[1]);
-			System.out.print("\nSizce Hangi eşleşme doğrudur? ");
+			System.out.print("\nSizce Hangi eÃ¾leÃ¾me doÃ°rudur? ");
 			sayi=gir.nextInt();
 			if(sayi==indis+1) {
 				dogru++;
 			}
-			if(sayi==indis+2) {  // En sonda sıfır girildiğinde bu satırı yazmasın diye kontrol yaptım. else demedim
-				System.err.println("\n-> ÜZGÜNÜZ :( YANLIŞ CEVAP GİRDİNİZ <-");
+			if(sayi!=indis+1 && sayÄ±!=0) {
+				System.err.println("\n-> ÃœZGÃœNÃœZ :( YANLIÃ CEVAP GÃRDÃNÃZ <-");
 			}
 			tur++;
 		}while(sayi!=0);
 		System.out.println("\n***********************************************************************************");
-		System.out.println("\nPlaka Şehir Eşleştirme Oyunu İstatistikleri: " +
-                " \nToplam Tur Sayısı              : "+--tur+
-                " \nToplam doğru eşleştirme sayısı : "+dogru+
-                " \n\n----Güle Güle---- ");
+		System.out.println("\nPlaka Ãehir EÃ¾leÃ¾tirme Oyunu Ãstatistikleri: " +
+                " \nToplam Tur SayÃ½sÃ½              : "+--tur+
+                " \nToplam doÃ°ru eÃ¾leÃ¾tirme sayÃ½sÃ½ : "+dogru+
+                " \n\n----GÃ¼le GÃ¼le---- ");
 		sonucDizi[0]=tur;
 		sonucDizi[1]=dogru;
 		gir.close();
 	}
 	
-	//Sonuçları Texte Yazdırma
+	//SonuÃ§larÃ½ Texte YazdÃ½rma
 	public void sonucYazdir(int sonucDizi[], int boyut) throws IOException {
-		String str1="Toplam Tur Sayısı:";
-		String str2="\nToplam Doğru Eşleştirme Sayısı:";
-		yazDosya=new File("E:\\JAVA\\dosyaIslem\\sonuçlar.txt");
+		String str1="Toplam Tur SayÃ½sÃ½:";
+		String str2="\nToplam DoÃ°ru EÃ¾leÃ¾tirme SayÃ½sÃ½:";
+		yazDosya=new File("E:\\JAVA\\dosyaIslem\\sonuÃ§lar.txt");
 		fw=new FileWriter(yazDosya,false);
 		yaz=new BufferedWriter(fw);
 		yaz.write(str1+sonucDizi[0]);
@@ -145,7 +145,7 @@ public class PLAKAOYUN {
 	}
 	
 	
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) {
 		new PLAKAOYUN();
 	}
 }
