@@ -113,7 +113,7 @@ public class PLAKAOYUN {
 			if(sayi==indis+1) {
 				dogru++;
 			}
-			if(sayi!=indis+1 && sayı!=0) {
+			if(sayi!=indis+1 && sayi!=0) {
 				System.err.println("\n-> ÜZGÜNÜZ :( YANLIÞ CEVAP GÝRDÝNÝZ <-");
 			}
 			tur++;
